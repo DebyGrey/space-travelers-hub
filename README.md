@@ -118,6 +118,8 @@ You can deploy this project:
 👤 **Martin Karugaba**
 
 - GitHub: [@githubhandle](https://github.com/martinkarugaba)
+- Twitter: [@twitterhandle](https://twitter.com/martin_karugaba)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/martinkarugaba/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
