@@ -4,7 +4,7 @@ const Navbar = () => (
   <>
     <div className="navbar">
       <div className="nav-left">
-        <h1>Space Travelers`&apos` Hub</h1>
+        <h1>Space Travelers&apos; Hub</h1>
         <nav>
           <ul>
             <li>
