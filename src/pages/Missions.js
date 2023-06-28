@@ -1,6 +1,8 @@
+import MissionsList from '../components/MissionsList';
+
 const Missions = () => (
   <div>
-    <h1>Missions Page: just added this text so it does not look so empty</h1>
+    <MissionsList />
   </div>
 );
 export default Missions;
