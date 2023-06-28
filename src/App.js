@@ -1,25 +1,38 @@
-import { Provider } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import { useEffect } from 'react';
+import {
+  Route,
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Missions from './pages/Missions';
 import MyProfile from './pages/MyProfile';
 import Rockets from './pages/Rockets';
 import PageNotFound from './pages/PageNotFound';
-import store from './redux/store';
 import './App.css';
+import RootLayout from './layouts/RootLayout';
+import { fetchRockets } from './redux/rockets/rocketsSlice';
 
-function App() {
-  return (
-    <Provider store={store}>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Rockets />} />
-        <Route path="categories" element={<Missions />} />
-        <Route path="my-profile" element={<MyProfile />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </Provider>
-  );
-}
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Rockets />} />
+      <Route path="missions" element={<Missions />} />
+      <Route path="my-profile" element={<MyProfile />} />
+      <Route path="*" element={<PageNotFound />} />
+    </Route>,
+  ),
+);
+
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRockets());
+  }, []);
+
+  return <RouterProvider router={router} />;
+};
 
 export default App;
