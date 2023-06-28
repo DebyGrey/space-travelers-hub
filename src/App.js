@@ -4,10 +4,10 @@ import {
   RouterProvider,
   createRoutesFromElements,
 } from 'react-router-dom';
-import Missions from './pages/Missions';
-import MyProfile from './pages/MyProfile';
-import Rockets from './pages/Rockets';
-import PageNotFound from './pages/PageNotFound';
+import Missions from './routes/Missions';
+import MyProfile from './routes/MyProfile';
+import Rockets from './routes/Rockets';
+import PageNotFound from './routes/PageNotFound';
 import './App.css';
 import RootLayout from './layouts/RootLayout';
 
