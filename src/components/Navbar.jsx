@@ -1,5 +1,4 @@
-import { NavLink } from 'react-router-dom';
-import '../styles/navbar.css';
+import NavMenu from './NavMenu';
 
 const Navbar = () => {
   const urls = [
@@ -14,16 +13,7 @@ const Navbar = () => {
         <nav className="nav-left ">
           <ul className="flex justify-end items-center">
             {urls.map((url) => (
-              <li className="last:border-l h-auto py-0 border-gray-400 px-2" key={url.id}>
-                <NavLink
-                  to={url.path}
-                  className={({ isActive }) => (isActive
-                    ? 'text-blue-600 underline'
-                    : 'text-blue-600')}
-                >
-                  {url.name}
-                </NavLink>
-              </li>
+              <NavMenu key={url.id} path={url.path} name={url.name} />
             ))}
           </ul>
         </nav>
