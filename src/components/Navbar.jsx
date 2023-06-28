@@ -1,3 +1,4 @@
+import Logo from './Logo';
 import NavMenu from './NavMenu';
 
 const Navbar = () => {
@@ -7,9 +8,9 @@ const Navbar = () => {
     { id: 3, name: 'My-profile', path: 'my-profile' },
   ];
   return (
-    <>
-      <div className="navbar border flex justify-between items-center px-[5rem] py-[2rem]">
-        <h1>Space Travelers&apos; Hub</h1>
+    <div className="px-[3.2rem] font-manrope">
+      <div className="border-b flex justify-between items-center px-[1.8rem] py-[1.5rem]">
+        <Logo />
         <nav className="nav-left ">
           <ul className="flex justify-end items-center">
             {urls.map((url) => (
@@ -18,7 +19,7 @@ const Navbar = () => {
           </ul>
         </nav>
       </div>
-    </>
+    </div>
   );
 };
 export default Navbar;
