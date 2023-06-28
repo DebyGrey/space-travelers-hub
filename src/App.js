@@ -1,15 +1,18 @@
+import { useEffect } from 'react';
 import {
   Route,
   createBrowserRouter,
   RouterProvider,
   createRoutesFromElements,
 } from 'react-router-dom';
-import Missions from './routes/Missions';
-import MyProfile from './routes/MyProfile';
-import Rockets from './routes/Rockets';
-import PageNotFound from './routes/PageNotFound';
+import { useDispatch } from 'react-redux';
+import Missions from './pages/Missions';
+import MyProfile from './pages/MyProfile';
+import Rockets from './pages/Rockets';
+import PageNotFound from './pages/PageNotFound';
 import './App.css';
 import RootLayout from './layouts/RootLayout';
+import { fetchRockets } from './redux/rockets/rocketsSlice';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +25,14 @@ const router = createBrowserRouter(
   ),
 );
 
-const App = () => <RouterProvider router={router} />;
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRockets());
+  }, [dispatch]);
+
+  return <RouterProvider router={router} />;
+};
 
 export default App;
