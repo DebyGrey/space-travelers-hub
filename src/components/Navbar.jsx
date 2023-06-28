@@ -12,9 +12,9 @@ const Navbar = () => {
       <div className="navbar border flex justify-between items-center px-[5rem] py-[2rem]">
         <h1>Space Travelers&apos; Hub</h1>
         <nav className="nav-left ">
-          <ul className="flex justify-end items-center gap-x-4">
+          <ul className="flex justify-end items-center">
             {urls.map((url) => (
-              <li key={url.id}>
+              <li className="last:border-l h-auto py-0 border-gray-400 px-2" key={url.id}>
                 <NavLink
                   to={url.path}
                   className={({ isActive }) => (isActive
