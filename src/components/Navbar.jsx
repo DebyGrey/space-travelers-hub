@@ -9,7 +9,7 @@ const Navbar = () => {
   ];
   return (
     <>
-      <div className="navbar border flex justify-between items-center px-[5rem] py-[1rem]">
+      <div className="font-manrope border flex justify-between items-center px-[5rem] py-[1rem]">
         <Logo />
         <nav className="nav-left ">
           <ul className="flex justify-end items-center">
