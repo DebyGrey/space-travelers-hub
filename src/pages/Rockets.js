@@ -5,7 +5,7 @@ const Rockets = () => {
   const { rockets } = useSelector((store) => store.rockets);
 
   return (
-    <div className="px-[5rem] py-[2rem]">
+    <div className="px-[5rem] py-[2rem] font-manrope">
       {rockets.map((rocket) => {
         const data = {
           id: rocket.id,
