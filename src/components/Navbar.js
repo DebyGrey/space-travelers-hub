@@ -2,9 +2,9 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
   <>
-    <div className="navbar">
+    <div className="navbar border">
       <div className="nav-left">
-        <h1>Space Travelers`&apos` Hub</h1>
+        <h1>Space Travelers&apos; Hub</h1>
         <nav>
           <ul>
             <li>
