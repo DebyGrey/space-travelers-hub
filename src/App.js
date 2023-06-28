@@ -30,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchRockets());
-  }, []);
+  }, [dispatch]);
 
   return <RouterProvider router={router} />;
 };
