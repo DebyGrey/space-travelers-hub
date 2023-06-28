@@ -1,3 +1,4 @@
+import Logo from './Logo';
 import NavMenu from './NavMenu';
 
 const Navbar = () => {
@@ -8,8 +9,8 @@ const Navbar = () => {
   ];
   return (
     <>
-      <div className="navbar border flex justify-between items-center px-[5rem] py-[2rem]">
-        <h1>Space Travelers&apos; Hub</h1>
+      <div className="navbar border flex justify-between items-center px-[5rem] py-[1rem]">
+        <Logo />
         <nav className="nav-left ">
           <ul className="flex justify-end items-center">
             {urls.map((url) => (
