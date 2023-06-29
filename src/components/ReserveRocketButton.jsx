@@ -18,8 +18,8 @@ const ReserveRocketButton = ({ id, reserved }) => {
       type="button"
       className={`${
         reserved
-          ? 'text-sm bg-transparent border border-blue-600 text-blue-600 cursor-pointer mt-3 rounded px-[1.2rem] py-2'
-          : 'text-white text-sm bg-blue-600 cursor-pointer mt-3 rounded px-[1.2rem] py-2'
+          ? 'text-base bg-transparent border border-blue-500 text-blue-600 cursor-pointer mt-3 rounded-md px-[1.2rem] py-2 font-medium'
+          : 'text-white text-base bg-blue-600 cursor-pointer mt-3 rounded px-[1.2rem] py-2 font-medium'
       }`}
       onClick={() => handleClick(id)}
     >

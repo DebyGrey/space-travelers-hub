@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import ReserveRocketButton from './ReserveRocketButton';
+import ReservedButton from './ReservedButton';
 
 const SingleRocket = ({
   id,
@@ -12,7 +13,10 @@ const SingleRocket = ({
     <img src={flickrImages} className="w-[300px]" alt="rocket" />
     <div className="py-2">
       <h1 className="text-xl font-semibold">{rocketName}</h1>
-      <p className="text-base mt-2">{description}</p>
+      <p className="text-base mt-2">
+        {reserved && <ReservedButton />}
+        {description}
+      </p>
       <ReserveRocketButton id={id} reserved={reserved} />
     </div>
   </div>
