@@ -5,12 +5,11 @@ const MyProfile = () => {
   const reservedRockets = rockets.filter(
     (rocket) => rocket.reserved === true,
   );
-  console.log(reservedRockets);
 
   return (
-    <div className="px-[5rem] h-auto py-[2rem] font-manrope flex justify-between items-center gap-x-[3rem]">
-      <div className="border w-1/2 h-auto rounded-md">
-        <h2>My missions</h2>
+    <section className="px-[5rem] h-auto py-[2rem] font-manrope flex justify-between items-start gap-x-[3rem]">
+      <div className="w-1/2 h-auto">
+        <h2 className="text-3xl font-bold mb-3">My missions</h2>
         <div />
       </div>
       <div className="w-1/2 h-auto">
@@ -23,7 +22,7 @@ const MyProfile = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 export default MyProfile;
