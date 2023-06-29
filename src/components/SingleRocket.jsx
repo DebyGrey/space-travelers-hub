@@ -2,7 +2,11 @@ import PropTypes from 'prop-types';
 import ReserveRocketButton from './ReserveRocketButton';
 
 const SingleRocket = ({
-  id, description, rocketName, flickrImages, reserved,
+  id,
+  description,
+  rocketName,
+  flickrImages,
+  reserved,
 }) => (
   <div className="h-auto flex justify-start items-start mb-[2.5rem] gap-x-[1.5rem]">
     <img src={flickrImages} className="w-[300px]" alt="rocket" />
@@ -20,5 +24,9 @@ SingleRocket.propTypes = {
   rocketName: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   flickrImages: PropTypes.string.isRequired,
-  reserved: PropTypes.bool.isRequired,
+  reserved: PropTypes.bool,
+};
+
+SingleRocket.defaultProps = {
+  reserved: false,
 };
