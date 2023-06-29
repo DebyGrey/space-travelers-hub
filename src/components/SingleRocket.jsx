@@ -28,5 +28,5 @@ SingleRocket.propTypes = {
 };
 
 SingleRocket.defaultProps = {
-  reserved: null,
+  reserved: false,
 };

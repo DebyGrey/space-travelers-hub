@@ -34,6 +34,6 @@ ReserveRocketButton.propTypes = {
 };
 
 ReserveRocketButton.defaultProps = {
-  reserved: null,
+  reserved: false,
 };
 export default ReserveRocketButton;
