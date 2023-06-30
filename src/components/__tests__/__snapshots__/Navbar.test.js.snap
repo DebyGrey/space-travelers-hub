@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar Navbar matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="px-[3.2rem] font-manrope"
+  >
+    <div
+      class="border-b flex justify-between items-center px-[1.8rem] py-[1.5rem]"
+    >
+      <div
+        class="flex justify-start items-center gap-x-4"
+      >
+        <img
+          alt="logo"
+          class="h-[60px] "
+          src="logo.png"
+        />
+        <h1
+          class="text-3xl font-bold"
+        >
+          Space Travelers' Hub
+        </h1>
+      </div>
+      <nav
+        class="nav-left "
+      >
+        <ul
+          class="flex justify-end items-center"
+        >
+          <li
+            class="last:border-l h-auto py-0 border-gray-400 px-2"
+          >
+            <a
+              aria-current="page"
+              class="text-blue-600 underline"
+              href="/"
+            >
+              Rockets
+            </a>
+          </li>
+          <li
+            class="last:border-l h-auto py-0 border-gray-400 px-2"
+          >
+            <a
+              class="text-blue-600"
+              href="/missions"
+            >
+              Missions
+            </a>
+          </li>
+          <li
+            class="last:border-l h-auto py-0 border-gray-400 px-2"
+          >
+            <a
+              class="text-blue-600"
+              href="/my-profile"
+            >
+              My-profile
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</DocumentFragment>
+`;
