@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import MissionButton from './MissionButton';
 
-const Mission = ({ missionName, missionDescription, highlightRow }) => {
+const Mission = ({
+  id,
+  missionName,
+  description,
+  highlightRow,
+  reserved,
+}) => {
   const rowClasses = classNames('border pl-2', {
     'bg-gray-100': highlightRow,
   });
@@ -9,9 +16,21 @@ const Mission = ({ missionName, missionDescription, highlightRow }) => {
     <>
       <tr className={rowClasses}>
         <td className="border pl-5 pt-5 align-top">{missionName}</td>
-        <td className="border p-5 text-justify">{missionDescription}</td>
-        <td className="border pl-5">Not a Member</td>
-        <td className="border pl-5" aria-hidden="true" />
+        <td className="border p-5 text-justify">{description}</td>
+        <td className="border pl-5">
+          {reserved ? (
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-green-500 text-white">
+              Active Member
+            </span>
+          ) : (
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-gray-500 text-white">
+              NOT A MEMBER
+            </span>
+          )}
+        </td>
+        <td className="border pl-5" aria-hidden="true">
+          <MissionButton id={id} reserved={reserved} />
+        </td>
       </tr>
     </>
   );
@@ -20,7 +39,13 @@ const Mission = ({ missionName, missionDescription, highlightRow }) => {
 export default Mission;
 
 Mission.propTypes = {
+  id: PropTypes.string.isRequired,
   missionName: PropTypes.string.isRequired,
-  missionDescription: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   highlightRow: PropTypes.bool.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
+
+// Mission.defaultProps = {
+//   reserved: false,
+// };
