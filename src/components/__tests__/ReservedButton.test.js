@@ -17,7 +17,7 @@ describe('ReservedButton', () => {
     expect(buttonElement).toHaveClass('mr-2');
   });
 
-  test("renders the ReservedButton component", () => {
+  test('renders the ReservedButton component', () => {
     const { asFragment } = render(<ReservedButton />);
 
     expect(asFragment()).toMatchSnapshot();

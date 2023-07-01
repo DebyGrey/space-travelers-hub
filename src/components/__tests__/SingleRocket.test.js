@@ -1,61 +1,94 @@
-import React from "react";
-import { render, renderer, create } from "@testing-library/react";
-import SingleRocket from "../SingleRocket";
+import React from 'react';
+import { render } from '@testing-library/react';
+import SingleRocket from '../SingleRocket';
 
-jest.mock("../ReserveRocketButton", () => {
-  return function MockReserveRocketButton() {
+jest.mock(
+  '../ReserveRocketButton',
+  () => function MockReserveRocketButton() {
     return (
-      <button data-testid="reserve-rocket-button-mock">
+      <button
+        type="button"
+        data-testid="reserve-rocket-button-mock"
+      >
         ReserveRocketButton Mock
       </button>
     );
-  };
-});
+  },
+);
 
-jest.mock("../ReservedButton", () => {
-  return function MockReservedButton() {
+jest.mock(
+  '../ReservedButton',
+  () => function MockReservedButton() {
     return (
-      <button data-testid="reserved-button-mock">
+      <button type="button" data-testid="reserved-button-mock">
         ReservedButton Mock
       </button>
     );
-  };
-});
+  },
+);
 
-describe("SingleRocket", () => {
+describe('SingleRocket', () => {
   const defaultProps = {
     id: 1,
-    description: "Rocket description",
-    rocketName: "Falcon 9",
-    flickrImages: "rocket.jpg",
+    description: 'Rocket description',
+    rocketName: 'Falcon 9',
+    flickrImages: 'rocket.jpg',
     reserved: false,
   };
 
-  test("renders rocket name", () => {
-    const props = { ...defaultProps };
-    const { getByText } = render(<SingleRocket {...props} />);
-    const rocketNameElement = getByText("Falcon 9");
+  test('renders rocket name', () => {
+    const { getByText } = render(
+      <SingleRocket
+        id={defaultProps.id}
+        description={defaultProps.description}
+        rocketName={defaultProps.rocketName}
+        flickrImages={defaultProps.flickrImages}
+        reserved={defaultProps.reserved}
+      />,
+    );
+    const rocketNameElement = getByText(defaultProps.rocketName);
     expect(rocketNameElement).toBeInTheDocument();
   });
 
-  test("renders rocket description", () => {
-    const props = { ...defaultProps };
-    const { getByText } = render(<SingleRocket {...props} />);
-    const descriptionElement = getByText("Rocket description");
+  test('renders rocket description', () => {
+    const { getByText } = render(
+      <SingleRocket
+        id={defaultProps.id}
+        description={defaultProps.description}
+        rocketName={defaultProps.rocketName}
+        flickrImages={defaultProps.flickrImages}
+        reserved={defaultProps.reserved}
+      />,
+    );
+    const descriptionElement = getByText(defaultProps.description);
     expect(descriptionElement).toBeInTheDocument();
   });
 
-  test("renders ReserveRocketButton when not reserved", () => {
-    const props = { ...defaultProps };
-    const { getByTestId } = render(<SingleRocket {...props} />);
-    const reserveButton = getByTestId("reserve-rocket-button-mock");
+  test('renders ReserveRocketButton when not reserved', () => {
+    const { getByTestId } = render(
+      <SingleRocket
+        id={defaultProps.id}
+        description={defaultProps.description}
+        rocketName={defaultProps.rocketName}
+        flickrImages={defaultProps.flickrImages}
+        reserved={defaultProps.reserved}
+      />,
+    );
+    const reserveButton = getByTestId('reserve-rocket-button-mock');
     expect(reserveButton).toBeInTheDocument();
   });
 
-  test("renders ReservedButton when reserved", () => {
-    const props = { ...defaultProps, reserved: true };
-    const { getByTestId } = render(<SingleRocket {...props} />);
-    const reservedButton = getByTestId("reserved-button-mock");
+  test('renders ReservedButton when reserved', () => {
+    const { getByTestId } = render(
+      <SingleRocket
+        id={defaultProps.id}
+        description={defaultProps.description}
+        rocketName={defaultProps.rocketName}
+        flickrImages={defaultProps.flickrImages}
+        reserved
+      />,
+    );
+    const reservedButton = getByTestId('reserved-button-mock');
     expect(reservedButton).toBeInTheDocument();
   });
 });
