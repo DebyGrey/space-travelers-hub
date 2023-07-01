@@ -1,15 +1,8 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getMissions } from '../redux/missions/missionsSlice';
+import { useSelector } from 'react-redux';
 import Mission from '../components/Mission';
 
 const Missions = () => {
   const { missions, isLoading } = useSelector((store) => store.missions);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getMissions());
-  }, [dispatch]);
 
   return (
     <div className="px-[5rem] py-[2rem] font-manrope">

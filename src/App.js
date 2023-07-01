@@ -13,6 +13,7 @@ import PageNotFound from './pages/PageNotFound';
 import './App.css';
 import RootLayout from './layouts/RootLayout';
 import { fetchRockets } from './redux/rockets/rocketsSlice';
+import { getMissions } from './redux/missions/missionsSlice';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,10 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchRockets());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getMissions());
   }, [dispatch]);
 
   return <RouterProvider router={router} />;
