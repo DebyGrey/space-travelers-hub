@@ -1,6 +1,9 @@
 module.exports = {
+  moduleFileExtensions: ["js", "jsx"],
   transform: {
-    "^.+\\.js$": "babel-jest",
-    axios: "<rootDir>/node_modules/axios/index.js",
+    "^.+\\.(js|jsx)$": "babel-jest",
+  },
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
 };

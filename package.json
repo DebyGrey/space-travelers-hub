@@ -22,12 +22,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --transformIgnorePatterns \"node_modules/(?!(axios-mock-adapter))\"",
     "eject": "react-scripts eject"
   },
   "jest": {
-    "transform": {
-      "^.+\\.(js|jsx)$": "babel-jest"
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
     }
   },
   "eslintConfig": {
