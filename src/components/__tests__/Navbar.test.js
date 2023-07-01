@@ -21,9 +21,9 @@ describe('Navbar', () => {
     );
     const menuItems = screen.getAllByRole('link');
     const expectedUrls = [
-      { id: 1, name: 'Rockets', path: '/' },
-      { id: 2, name: 'Missions', path: '/missions' },
-      { id: 3, name: 'My-profile', path: '/my-profile' },
+      { id: 1, name: "Rockets", path: "/" },
+      { id: 2, name: "Missions", path: "/missions" },
+      { id: 3, name: "My Profile", path: "/my-profile" },
     ];
 
     expect(menuItems).toHaveLength(expectedUrls.length);
