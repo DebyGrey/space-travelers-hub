@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavMenu matches snapshot 1`] = `
+<DocumentFragment>
+  <li
+    class="last:border-l h-auto py-0 border-gray-400 px-2"
+  >
+    <a
+      aria-current="page"
+      class="text-blue-600 underline"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+</DocumentFragment>
+`;
